@@ -89,7 +89,9 @@ public class BlackjackEndpoint {
     private void giveCard(Session session) throws EncodeException, IOException {
         System.out.println("Entregando una carta nueva...");
         Card newCard = generateRandomCard();
-        users.get(session.getId()).getCards().add(newCard);
+        List<Card> cards = users.get(session.getId()).getCards();
+        cards.add(newCard);
+        users.get(session.getId()).setCards(cards);
         if (users.get(session.getId()).getCount() > 21) {
             System.out.println("El usuario ha superado el puntaje permitido...");
             users.get(session.getId()).setTurn(Boolean.FALSE);

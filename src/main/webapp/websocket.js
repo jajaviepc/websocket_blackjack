@@ -83,6 +83,7 @@ function connect() {
         {
             log.innerHTML += " Tipo:" + message.tipo + "\n";
             console.log("8");
+            ws.close();
 
         }else if (message.tipo == 99)
         {

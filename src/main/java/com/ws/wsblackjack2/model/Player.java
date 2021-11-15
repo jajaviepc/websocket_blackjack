@@ -48,6 +48,7 @@ public class Player {
     }
 
     public Integer getCount() {
+        this.count=0;
         calculateCount();
         return count;
     }
